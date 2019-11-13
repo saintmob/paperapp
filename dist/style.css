@@ -2300,7 +2300,7 @@
 
     @font-face {
       font-family: CenturyGothicBold;
-      src: url(/dist/bc420c1c2b98e2ee8b2a75c1ce1fe083.ttf)
+      src: url(./cg.ttf)
     }
 
     body,
@@ -2314,7 +2314,7 @@
     }
 
     body {
-      background-image: url(bg-2019-may20.jpg);
+      background-image: url(bg-2019-oct22.jpg);
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: cover;
