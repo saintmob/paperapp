@@ -2374,7 +2374,7 @@
     .main .changelog {
       font-size: 14px;
       color: #fff;
-      text-shadow: 0 0 15px rgba(0, 0, 0, .9)
+      text-shadow: 0 0 5px rgba(0, 0, 0, .9)
     }
 
     .main .changelog h3 {
@@ -2421,10 +2421,10 @@
     }
 
     .footer .desc span:first-child {
-      margin-right: 29px
+      margin-right: 10px
     }
 
-    .footer .update {
+    .footer .contact {
       text-align: right
     }
 
