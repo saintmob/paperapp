@@ -2314,7 +2314,7 @@
     }
 
     body {
-      background-image: url(bg-2022-aug.jpg);
+      background-image: url(bg-2022-sep.jpg);
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: cover;
@@ -2403,7 +2403,7 @@
 
     .footer a,
     .footer p {
-      text-shadow: 0 0 15px rgba(0, 0, 0, .9)
+      text-shadow: 0 0 10px rgba(0, 0, 0, .9)
     }
 
     .footer a {
