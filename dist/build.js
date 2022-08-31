@@ -4745,7 +4745,10 @@
             }, [n("p", {
                 staticClass: "desc"
             }, e._l(e.content.update, function(t) {
-                return n("span", {
+                return n("a", {
+                    attrs: {
+                    href: "https://dl.nsns.in/pap.er-v3.6.dmg"
+                },
                     domProps: {
                         textContent: e._s(t)
                     }
@@ -4756,7 +4759,7 @@
                 staticClass: "contact"
             }, [n("a", {
                 attrs: {
-                    href: "https://paperapp.net/app/pap.er-v3.6.dmg"
+                    href: "mailto:hi@paperapp.net?subject=pap.er"
                 },
                 domProps: {
                     textContent: e._s(e.content.contact)

@@ -2349,7 +2349,7 @@
     .main .description {
       font-size: 18px;
       line-height: 2em;
-      text-shadow: 0 0 15px rgba(0, 0, 0, .9)
+      text-shadow: 0 0 0px rgba(0, 0, 0, .9)
     }
 
     .main .download {
@@ -2374,7 +2374,7 @@
     .main .changelog {
       font-size: 14px;
       color: #fff;
-      text-shadow: 0 0 5px rgba(0, 0, 0, .9)
+      text-shadow: 0 0 0px rgba(0, 0, 0, .9)
     }
 
     .main .changelog h3 {
@@ -2403,11 +2403,11 @@
 
     .footer a,
     .footer p {
-      text-shadow: 0 0 10px rgba(0, 0, 0, .9)
+      text-shadow: 0 0 0px rgba(0, 0, 0, .9)
     }
 
     .footer a {
-      color: #fff;
+      color: #000;
       text-decoration: none;
       transition: opacity .15s ease-in
     }
@@ -2417,11 +2417,8 @@
     }
 
     .footer .desc {
+      color: #000;
       text-align: center
-    }
-
-    .footer .desc span:first-child {
-      margin-right: 10px
     }
 
     .footer .contact {
