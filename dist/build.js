@@ -4747,7 +4747,7 @@
             }, e._l(e.content.update, function(t) {
                 return n("a", {
                     attrs: {
-                    href: "https://dl.nsns.in/pap.er-v3.6.dmg"
+                    href: "https://s3.nsns.in/dl/pap.er-v3.6.dmg"
                 },
                     domProps: {
                         textContent: e._s(t)
