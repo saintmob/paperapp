@@ -2314,7 +2314,7 @@
     }
 
     body {
-      background-image: url(bg-2022-sep.jpg);
+      background-image: url(bg-2022-oct.jpg);
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: cover;
@@ -2407,7 +2407,7 @@
     }
 
     .footer a {
-      color: #000;
+      color: #fff;
       text-decoration: none;
       transition: opacity .15s ease-in
     }
