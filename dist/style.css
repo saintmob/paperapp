@@ -2314,7 +2314,7 @@
     }
 
     body {
-      background-image: url(bg-2022-oct.jpg);
+      background-image: url(bg-2022-nov.jpg);
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: cover;
@@ -2349,7 +2349,7 @@
     .main .description {
       font-size: 18px;
       line-height: 2em;
-      text-shadow: 0 0 0px rgba(0, 0, 0, .9)
+/*      text-shadow: 0 0 0px rgba(0, 0, 0, .9)*/
     }
 
     .main .download {
@@ -2374,7 +2374,7 @@
     .main .changelog {
       font-size: 14px;
       color: #fff;
-      text-shadow: 0 0 0px rgba(0, 0, 0, .9)
+      /*text-shadow: 0 0 0px rgba(0, 0, 0, .9)*/
     }
 
     .main .changelog h3 {
