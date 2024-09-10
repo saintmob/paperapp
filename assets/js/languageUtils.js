@@ -22,6 +22,8 @@ export function updateContent(lang) {
     safelySetTextContent("app-requires", data.appRequires);
     safelySetTextContent("brand-description", data.brandDescription);
     safelySetTextContent("slogan-text", data.brandSlogan);
+    safelySetTextContent("direct-download", data.directDownload);
+    safelySetTextContent("old-version-download", data.oldVersionDownload);
     safelySetTextContent("features-title", data.features);
     safelySetTextContent("reviews-title", data.reviewsTitle);
     safelySetTextContent("contact-title", data.contactTitle);
@@ -31,7 +33,6 @@ export function updateContent(lang) {
     safelySetTextContent("footer-privacy", data.footerPrivacy);
     safelySetInnerHTML(".copyright", `<span class="pap-er-brand">©️ pap.er</span> ${data.footerCopyright}`);
 
-    // 更新Key Features
     const featureItems = document.querySelectorAll("#app-features .feature-item");
     if (featureItems.length >= 4) {
         featureItems[0].querySelector("h3").textContent = data.featureEditorial;
@@ -43,8 +44,17 @@ export function updateContent(lang) {
         featureItems[3].querySelector("h3").textContent = data.featureMyWallpapers;
         featureItems[3].querySelector("p").textContent = data.featureMyWallpapersDesc;
     }
+
+    const faqItems = document.querySelectorAll("#faq .faq-item");
+    faqItems.forEach((item, index) => {
+        const questionElement = item.querySelector(".question");
+        const answerElement = item.querySelector(".answer");
+        if (questionElement && answerElement && data[`faq${index + 1}`] && data[`faq${index + 1}Answer`]) {
+            questionElement.textContent = data[`faq${index + 1}`];
+            answerElement.textContent = data[`faq${index + 1}Answer`];
+        }
+    });
     
-    // 更新导航菜单项
     const featuresLink = document.querySelector('.navbar-item[href="#features"]');
     if (featuresLink) featuresLink.textContent = data.menuFeatures;
     
@@ -57,11 +67,6 @@ export function updateContent(lang) {
     const contactLink = document.getElementById("contact-link");
     if (contactLink) contactLink.textContent = data.menuContact;
 
-    // 更新下载链接文本
-    safelySetTextContent("direct-download", data.directDownload);
-    safelySetTextContent("old-version-download", data.oldVersionDownload);
-
-    // 更新下载按钮
     const config = languageConfig[lang] || languageConfig['en'];
     const downloadBadge = document.getElementById('download-badge');
     const downloadLink = document.getElementById('download-link');
