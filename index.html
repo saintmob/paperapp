@@ -1,94 +1,325 @@
 <!DOCTYPE html>
-<html lang="ZH-CN">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>pap.er - 专为 Mac 设计的壁纸应用</title>
-  <meta name="description" content="2023年4月更新 pap.er - 专为Mac设计的壁纸应用；每天享受来自全球新鲜精美的壁纸，喜欢寻找壁纸来改变心情？pap.er 适合你">
-  <meta name="keywords" lang="ZH-CN" content="pap.er,paper,壁纸,墙纸,桌布,mac壁纸,随机壁纸,竖屏壁纸">
-  <meta name="Keywords" lang="en" content="pap.er,paper,wallpaper,wallpaper mac,random wallpaper">
-  <link rel="apple-touch-icon" href="./icon_128x128@2x.png">
-  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta content="telephone=no,email=no" name="format-detection">
-  <link rel="stylesheet" href="./dist/style.css">
+<html lang="zh-Hans-CN">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pap.er - 专业Mac壁纸应用 | 每日精选高清壁纸</title>
+    <meta name="description" content="pap.er是专为Mac设计的壁纸应用，每天提供全球精选高清壁纸。智能分类、一键设置、收藏功能，让您的Mac桌面焕然一新。">
+    <meta name="keywords" content="pap.er, Mac壁纸, macOS壁纸, 高清壁纸, 桌面背景, 每日壁纸, 壁纸应用">
+    <meta property="og:title" content="pap.er - 专业Mac壁纸应用 | 每日精选高清壁纸">
+    <meta property="og:description" content="pap.er是专为Mac设计的壁纸应用，每天提供全球精选高清壁纸。智能分类、一键设置、收藏功能，让您的Mac桌面焕然一新。">
+    <meta property="og:image" content="./assets/screenshots/webp/s00047.webp">
+    <meta property="og:url" content="https://paperapp.net">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="pap.er - 专业Mac壁纸应用 | 每日精选高清壁纸">
+    <meta name="twitter:description" content="pap.er是专为Mac设计的壁纸应用，每天提供全球精选高清壁纸。智能分类、一键设置、收藏功能，让您的Mac桌面焕然一新。">
+    <meta name="twitter:image" content="./assets/screenshots/webp/s00047.webp">
+    <link rel="apple-touch-icon" href="./assets/icon_128x128@2x.png">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="./assets/css/pap-er.css">
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
 </head>
 
 <body>
-  <div class="content"></div>
-  <script type="text/javascript">
-    window.DOWNLOAD_LINK = "https://apps.apple.com/app/pap-er-%E4%BC%98%E9%9B%85%E5%A3%81%E7%BA%B8/id1639052102"
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="#" class="logo-link">
+                    <img src="./assets/logo.png" alt="pap.er Logo" class="logo">
+                </a>
+                <a href="#" class="brand-text">
+                    <span class="pap-er-brand">pap.er</span>
+                    <span id="brand-description" class="brand-description">优雅壁纸</span>
+                </a>
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="navbar-menu">
+                <a href="#features" class="navbar-item">主要功能</a>
+                <a href="#user-reviews" class="navbar-item">用户评价</a>
+                <a href="#faq" class="navbar-item">常见问题</a>
+                <a id="contact-link" href="#contact" class="navbar-item">联系我们</a>
+                <div class="navbar-item language-selector">
+                    <span class="current-language">
+                        <svg class="globe-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-text">Language</span>
+                    </span>
+                    <div class="language-dropdown">
+                        <a href="#" data-lang="zh-Hans-CN">简体中文</a>
+                        <a href="#" data-lang="zh-Hant">繁體中文</a>
+                        <a href="#" data-lang="en">English</a>
+                        <a href="#" data-lang="ja">日本語</a>
+                        <a href="#" data-lang="ko">한국어</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    window.LANGS = {
-      'zh-Hans-CN': 2,
-      'zh-Hant': 1,
-      'en': 3
-    }
+    <header id="hero" class="hero">
+        <div class="container">
+            <h1 id="app-title"><span class="pap-er-brand">pap.er</span> - <span id="app-title-suffix">专为 Mac 设计的壁纸应用</span></h1>
+            <p id="app-description">每天享受来自全球的精选高清壁纸</p>
+            <a href="https://apps.apple.com/cn/app/pap-er-%E4%BC%98%E9%9B%85%E5%A3%81%E7%BA%B8/id1639052102" id="download-link" class="download-button">
+                <img src="./assets/download-badge/zh-Hans-CN.svg" alt="在 Mac App Store 上下载" id="download-badge">
+            </a>
+            <p class="download-links">
+                <a href="https://s3.nxn.fun/dl/paper-v5.3.0.dmg" id="direct-download">下载 dmg 文件</a> | <a href="./app/pap.er-v3.6.dmg" id="old-version-download">下载版 for MacOS X 10.13+</a>
+            </p>
+        </div>
+    </header>
 
-    window.CONTENT = {
-      [LANGS['zh-Hans-CN']]: {
-        description: [
-          "专为 Mac 设计的壁纸应用",
-          "每天享受来自全球新鲜精美的壁纸"
-        ],
-        download: "下载 pap.er 最新版",
-        contact: "联系我们",
-        update: "仍在使用旧版 macOS？获取 pap.er v3.7",
-        changelogs: [
-          {
-            title: "新版本发布 (2023/3/25)：",
-            content: [
-              "需要 macOS 11 Big Sur 或更高系统版本；",
-              "已兼容 Apple M1、M2 芯片；",
-              "若仍在使用旧版 macOS，请下载页面底部的 v3.6 版本。"
-            ]
-          }
-        ],
-      },
-      [LANGS['zh-Hant']]: {
-        description: [
-          "專為 Mac 設計的桌布應用",
-          "每天享受來自全球新鮮精美的桌布"
-        ],
-        download: "下載 pap.er 最新版",
-        contact: "給我們發郵件",
-        update: "仍在使用舊版 macOS？獲取 pap.er v3.7",
-        changelogs: [
-          {
-            title: "新版本釋出 (2023/3/25)：",
-            content: [
-            "需要 macOS 11 Big Sur 或更高系統版本；",
-            "已兼容 Apple M1、M2 系列；",
-            "若仍在使用舊版 macOS，請下載頁面底部的 v3.6 版本。"
-            ]
-          }
-        ]
-      },
-      [LANGS['en']]: {
-        description: [
-          'Elegant Wallpaper App for macOS.',
-          'Deliver fresh and stunning wallpapers everyday.'
-        ],
-        download: 'Get pap.er for macOS',
-        contact: "Contact us",
-        update: "Get pap.er v3.7 for older macOS",
-        changelogs: [
-          {
-            title: "Changelog (2023/3/25):",
-            content: [
-            "Requirements: macOS 11 Big Sur or later. ",
-            "Now compatible on both Apple Silicon (M1, M2 etc) as well as macOS 12 Monterey.",
-            "For macOS 10.15, please check the v3.6 version from the bottom of the page.",
-            ]
-          }
-        ]
-      }
-    }
-  </script>
-  <script src="./dist/build.js"></script>
+    <section id="screenshots" class="screenshots" aria-label="应用截图">
+        <div class="swiper-container">
+                    <noscript>
+                        <div class="noscript-warning">
+                            <div class="alert alert-warning">
+                              ** JavaScript is disabled. This affects language switching, image carousel, and FAQ display. Please enable JavaScript for the best experience. **
+                            </div>
+                          </div>
+                          <img src="./assets/screenshots/webp/s00047.webp" alt="Screenshot 1" width="100%" loading="lazy" style="border-radius: 8px;"> 
+                          <style>
+                            .swiper-wrapper, .swiper-pagination {
+                              display: none;
+                            }
+                          </style>
+                      </noscript>
+            <div class="swiper-wrapper" id="screenshot-wrapper">
+                <!-- 这里的图片将由 JavaScript 动态生成 -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 
-  <!-- Google tag (gtag.js) -->
+    <section id="brand-slogan" class="brand-slogan" aria-label="品牌文案">
+        <div class="container">
+            <span id="slogan-text" class="slogan-text">「你的桌面，是画廊，也是窗户。」</span>
+        </div>
+    </section>
+
+    <section id="features" class="features" aria-label="应用功能">
+        <div class="container">
+            <h2 id="features-title" class="section-title">主要功能</h2>
+            <div id="app-features">
+                <!-- 编辑推荐 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="iconGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#63b3ed;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="url(#iconGradient1)" stroke-width="1.5"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="url(#iconGradient1)" stroke-width="1.5"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12" stroke="url(#iconGradient1)" stroke-width="1.5"></line>
+                        </svg>
+                    </div>
+                    <h3 id="feature-editorial">编辑推荐</h3>
+                    <p id="feature-editorial-desc">人工精选每一张高清壁纸</p>
+                </div>
+
+                <!-- 专屏专选 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="iconGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#63b3ed;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="8" y="2" width="8" height="14" rx="1" ry="1" stroke="url(#iconGradient2)" stroke-width="1.5"></rect>
+                            <line x1="12" y1="16" x2="12" y2="19" stroke="url(#iconGradient2)" stroke-width="1.5"></line>
+                            <line x1="10" y1="19" x2="14" y2="19" stroke="url(#iconGradient2)" stroke-width="1.5"></line>
+                            <rect x="2" y="4" width="16" height="10" rx="1" ry="1" stroke="url(#iconGradient2)" stroke-width="1" opacity="0.6"></rect>
+                        </svg>
+                        <span class="icon-badge">5K</span>
+                    </div>
+                    <h3 id="feature-screen-adapt">专屏专选</h3>
+                    <p id="feature-screen-adapt-desc">专为 4K, 5K 和直立显示器分别挑选壁纸</p>
+                </div>
+
+                <!-- 贴心易用 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="iconGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#63b3ed;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="12" cy="12" r="10" stroke="url(#iconGradient3)" stroke-width="1.5"></circle>
+                            <polyline points="12 6 12 12 16 14" stroke="url(#iconGradient3)" stroke-width="1.5"></polyline>
+                        </svg>
+                    </div>
+                    <h3 id="feature-one-click">贴心易用</h3>
+                    <p id="feature-one-click-desc">一键换壁纸，或定期自动换</p>
+                </div>
+
+                <!-- 我的壁纸 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="iconGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#63b3ed;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="url(#iconGradient4)" stroke-width="1.5"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5" stroke="url(#iconGradient4)" stroke-width="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21" stroke="url(#iconGradient4)" stroke-width="1.5"></polyline>
+                        </svg>
+                    </div>
+                    <h3 id="feature-my-wallpapers">我的壁纸</h3>
+                    <p id="feature-my-wallpapers-desc">可在壁纸库中加入自己的图片</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="user-reviews" class="user-reviews" aria-label="用户评价">
+        <div class="container">
+            <h2 id="reviews-title" class="section-title">用户评价</h2>
+            <div id="reviews-container" class="reviews-container">
+                <!-- 静态用户评价内容 -->
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">最好的壁纸软件</h3>
+                    <p class="review-text">这是我用过的最好的壁纸软件没有之一 支持付费</p>
+                    <p class="review-author">- oceanne514</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">设计师审美在线</h3>
+                    <p class="review-text">这么高级的app设计师审美很在线，包括入库的图片好看好看好看！！！！</p>
+                    <p class="review-author">- 张佳津</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">清晰度高且方便</h3>
+                    <p class="review-text">很壁纸清晰度高，每次使用都能看到不同的壁纸 很方便，换桌面和锁屏哦度很方便</p>
+                    <p class="review-author">- Arthur_SDF</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">Amazing wallpaper app</h3>
+                    <p class="review-text">it's an amazing wallpaper app I have ever tried. this is the best, period！</p>
+                    <p class="review-author">- Guy ab</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 id="faq-title" class="section-title">常见问题</h2>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>pap.er 是免费的吗？未来会收费吗？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer" style="max-height: none; opacity: 1; padding: 1rem;">
+                        <p>pap.er 自 2017 年发布以来，一直为用户提供免费的高质量壁纸体验。我们计划在未来推出功能更丰富的付费版本，敬请期待！</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>pap.er 支持哪些 macOS 版本？新旧版 pap.er 有区别吗？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>新版 pap.er 5.x （Mac Appstore 版本）需要 macOS 11.0 及以上系统版本，所有壁纸均由编辑精心挑选。旧版 pap.er 3.x 仍然兼容 Mac OS X 10.13+，但壁纸未经人工筛选。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>pap.er 支持 iOS, Android 以及 Windows 系统吗？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>目前 pap.er 暂不支持 iOS、Android 和 Windows 系统，但我们已将其纳入未来的发展计划。我们将针对不同的设备平台进行重新设计，以确保始终如一地提供卓越的用户体验。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何设置自动更换壁纸？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>您可以在 pap.er 界面右上角的设置入口中启用自动更换壁纸功能，并设置更换频率。您可以选择每周、每天或每小时更换一次。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何在壁纸库加入我自己的图片？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>您只需将图片直接放入 pap.er 的存储文件夹，并在设置中勾选“导入本地壁纸”即可。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>pap.er 的壁纸来源是什么？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们的壁纸均来自全球优秀的摄影师和设计师的作品。每张壁纸的下载按钮下方都附有出处链接，以确保所有壁纸均已获得授权（包括自动授权）且质量上乘。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>我可以向 pap.er 提交我自己的壁纸作品吗？</h3>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们期待与摄影师、设计师和品牌方直接合作，并将改进未来的新版本以更好地支持作品提交。欢迎您发送邮件与我们联系。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 id="contact-title" class="section-title">联系我们</h2>
+            <p id="contact-description">如有任何问题或建议，欢迎随时与我们联系。</p>
+            <a href="mailto:hi@paperapp.net" class="contact-button" id="contact-button">发送邮件</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright"><span class="pap-er-brand">©️ pap.er</span> with love, since 2017.</p>
+                <div class="footer-links">
+                    <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
+                    <a href="./terms.html" id="footer-terms">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="./assets/js/swiper-bundle.min.js"></script>
+<script type="module" src="./assets/js/app.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQNS6MT05L"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -97,6 +328,5 @@
 
   gtag('config', 'G-YQNS6MT05L');
 </script>
-</body>
 
 </html>
