@@ -2,11 +2,11 @@ import { langData, languageConfig } from './translations.js';
 
 export function updateContent(lang) {
     const data = langData[lang] || langData['en']; // 使用英语作为后备语言
-    
+
     function safelySetTextContent(id, content) {
         const element = document.getElementById(id);
         if (element) {
-            element.textContent = content;
+            element.textContent = content.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         }
     }
 
@@ -33,37 +33,68 @@ export function updateContent(lang) {
     safelySetTextContent("footer-privacy", data.footerPrivacy);
     safelySetInnerHTML(".copyright", `<span class="pap-er-brand">©️ pap.er</span> ${data.footerCopyright}`);
 
-    const featureItems = document.querySelectorAll("#app-features .feature-item");
-    if (featureItems.length >= 4) {
-        featureItems[0].querySelector("h3").textContent = data.featureEditorial;
-        featureItems[0].querySelector("p").textContent = data.featureEditorialDesc;
-        featureItems[1].querySelector("h3").textContent = data.featureScreenAdapt;
-        featureItems[1].querySelector("p").textContent = data.featureScreenAdaptDesc;
-        featureItems[2].querySelector("h3").textContent = data.featureOneClick;
-        featureItems[2].querySelector("p").textContent = data.featureOneClickDesc;
-        featureItems[3].querySelector("h3").textContent = data.featureMyWallpapers;
-        featureItems[3].querySelector("p").textContent = data.featureMyWallpapersDesc;
+    // 更新 FAQ 标题
+    const faqTitle = document.getElementById('faq-title');
+    if (faqTitle) {
+        faqTitle.textContent = data.faqTitle;
     }
 
-    const faqItems = document.querySelectorAll("#faq .faq-item");
+    // 更新 FAQ 内容
+    const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach((item, index) => {
-        const questionElement = item.querySelector(".question");
-        const answerElement = item.querySelector(".answer");
+        const questionElement = item.querySelector('h3'); // 获取问题标题元素
+        const answerElement = item.querySelector('p'); // 获取答案内容元素
+
         if (questionElement && answerElement && data[`faq${index + 1}`] && data[`faq${index + 1}Answer`]) {
             questionElement.textContent = data[`faq${index + 1}`];
             answerElement.textContent = data[`faq${index + 1}Answer`];
         }
     });
-    
+
+    const featureItems = document.querySelectorAll("#app-features .feature-item");
+    if (featureItems.length >= 4) {
+        const fragment = document.createDocumentFragment();
+
+        featureItems.forEach((item, index) => {
+            const titleElement = item.querySelector('h3');
+            const descriptionElement = item.querySelector('p');
+
+            switch (index) {
+                case 0:
+                    titleElement.textContent = data.featureEditorial;
+                    descriptionElement.textContent = data.featureEditorialDesc;
+                    break;
+                case 1:
+                    titleElement.textContent = data.featureScreenAdapt;
+                    descriptionElement.textContent = data.featureScreenAdaptDesc;
+                    break;
+                case 2:
+                    titleElement.textContent = data.featureOneClick;
+                    descriptionElement.textContent = data.featureOneClickDesc;
+                    break;
+                case 3:
+                    titleElement.textContent = data.featureMyWallpapers;
+                    descriptionElement.textContent = data.featureMyWallpapersDesc;
+                    break;
+            }
+
+            fragment.appendChild(item); // 添加到 fragment 中
+        });
+
+        // 一次性将所有更改插入到 DOM 中
+        document.getElementById('app-features').appendChild(fragment);
+    }
+
+
     const featuresLink = document.querySelector('.navbar-item[href="#features"]');
     if (featuresLink) featuresLink.textContent = data.menuFeatures;
-    
+
     const userReviewsLink = document.querySelector('.navbar-item[href="#user-reviews"]');
     if (userReviewsLink) userReviewsLink.textContent = data.menuUserReviews;
-    
+
     const faqLink = document.querySelector('.navbar-item[href="#faq"]');
     if (faqLink) faqLink.textContent = data.menuFAQ;
-    
+
     const contactLink = document.getElementById("contact-link");
     if (contactLink) contactLink.textContent = data.menuContact;
 
@@ -95,7 +126,7 @@ export function changeLanguage(selectedLanguage) {
 
 export function initLanguageSelector() {
     const languageDropdown = document.querySelector('.language-dropdown');
-    languageDropdown.addEventListener('click', function(e) {
+    languageDropdown.addEventListener('click', function (e) {
         e.preventDefault();
         if (e.target.tagName === 'A') {
             changeLanguage(e.target.getAttribute('data-lang'));
@@ -106,12 +137,20 @@ export function initLanguageSelector() {
 export function getDefaultLanguage() {
     const savedLang = localStorage.getItem('preferredLanguage');
     const userLang = savedLang || navigator.language || navigator.userLanguage;
-    
-    if (userLang.startsWith('zh') || userLang === 'zh-Hans-CN' || userLang === 'zh-CN') return 'zh-Hans-CN';
-    if (userLang === 'zh-Hant' || userLang === 'zh-TW' || userLang === 'zh-HK') return 'zh-Hant';
-    if (userLang.startsWith('ja')) return 'ja';
-    if (userLang.startsWith('ko')) return 'ko';
-    if (userLang.startsWith('en')) return 'en';
-    
+
+    const langMapping = {
+        'zh-Hans-CN': ['zh', 'zh-Hans-CN', 'zh-CN'],
+        'zh-Hant': ['zh-Hant', 'zh-TW', 'zh-HK'],
+        'ja': ['ja'],
+        'ko': ['ko'],
+        'en': ['en']
+    };
+
+    for (const [lang, variants] of Object.entries(langMapping)) {
+        if (variants.some(variant => userLang.startsWith(variant))) {
+            return lang;
+        }
+    }
+
     return 'zh-Hans-CN';
 }

@@ -1,11 +1,10 @@
-/* 变量 */
 :root {
   --primary-color: #222333;
   --text-color: #333;
-  --background-color: #ffffff;
+  --background-color: #fff;
   --secondary-background: #f7f7f8;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-brand: 'Century Gothic', 'Century Gothic Custom', sans-serif;
   --transition-speed: 0.3s;
   --hover-color: #4a90e2;
@@ -13,7 +12,6 @@
   --spacing-unit: 1rem;
 }
 
-/* 字体 */
 @font-face {
   font-family: 'Century Gothic Custom';
   src: url('../font/cg.ttf') format('truetype');
@@ -22,7 +20,6 @@
   font-display: swap;
 }
 
-/* 重置和基础样式 */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -42,14 +39,12 @@ body {
   padding-top: 80px;
 }
 
-/* 布局 */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-unit);
 }
 
-/* Navbar */
 .navbar {
   background-color: var(--background-color);
   box-shadow: 0 1px 2px var(--shadow-color);
@@ -99,12 +94,12 @@ body {
 
 .brand-slogan {
   text-align: center;
-  margin: 3rem 0; /* 上下边距 */
-  font-size: 1.5rem; /* 字体大小 */
-  font-style: italic; /* 斜体 */
-  color: var(--primary-color); /* 文字颜色 */
-  font-weight: 500; /* 字重 */
-  letter-spacing: 1px; /* 字间距 */
+  margin: 3rem 0;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--primary-color);
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .navbar-menu {
@@ -128,7 +123,6 @@ body {
   display: none;
 }
 
-/* Language Selector */
 .language-selector {
   position: relative;
   display: flex;
@@ -192,12 +186,10 @@ body {
   color: var(--hover-color);
 }
 
-/* Hero Section */
 .hero {
   background-color: var(--secondary-background);
-  padding: 3rem 0;
+  padding: 100px 0 3rem;
   text-align: center;
-  padding-top: 100px;
 }
 
 .hero h1 {
@@ -210,17 +202,15 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* 下载按钮容器样式 */
 .download-button-container {
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
-/* 下载按钮样式 */
 .download-button {
   display: inline-block;
-  width: 240px; /* 设置一个固定的宽度 */
+  width: 240px;
   transition: transform 0.3s ease;
 }
 
@@ -228,17 +218,9 @@ body {
   transform: scale(1.05);
 }
 
-/* 下载按钮图片样式 */
 .download-button img {
   width: 100%;
   height: auto;
-}
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-  .download-button {
-    width: 200px; /* 在小屏幕上稍微缩小按钮 */
-  }
 }
 
 #app-requires {
@@ -262,10 +244,8 @@ body {
   text-decoration: underline;
 }
 
-/* Screenshots */
 .screenshots {
-  padding-top: 20px;
-  padding-bottom: 1rem;
+  padding: 20px 0 1rem;
   background-color: var(--background-color);
   position: relative;
   z-index: 1;
@@ -299,7 +279,6 @@ body {
   box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-/* 通用 Section 标题样式 */
 .section-title {
   text-align: center;
   font-size: 2rem;
@@ -322,7 +301,6 @@ body {
   background-color: var(--primary-color);
 }
 
-/* Features */
 .features {
   padding: 5rem 0;
   background-color: var(--secondary-background);
@@ -390,7 +368,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* User Reviews */
 .user-reviews {
   padding: 5rem 0;
   background-color: var(--background-color);
@@ -447,7 +424,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Footer */
 .footer {
   background-color: var(--secondary-background);
   padding: 1rem 0;
@@ -488,12 +464,10 @@ body {
   color: var(--hover-color);
 }
 
-/* Contact */
 .contact {
-  padding: 4rem 0;
+  padding: 100px 0 4rem;
   background-color: var(--secondary-background);
   text-align: center;
-  padding-top: 100px;
 }
 
 .contact h2 {
@@ -518,7 +492,6 @@ body {
   background-color: var(--hover-color);
 }
 
-/* Brand Style */
 .pap-er-brand,
 #app-title .pap-er-brand,
 .footer .copyright .pap-er-brand {
@@ -534,7 +507,6 @@ body {
   font-size: 1em !important;
 }
 
-/* Swiper pagination styles */
 .swiper-pagination {
   position: absolute;
   bottom: 0 !important;
@@ -552,9 +524,8 @@ body {
   opacity: 1;
 }
 
-/* FAQ 样式 */
 .faq {
-  padding: 5rem 0;
+  padding: 0 0 5rem;
   background-color: var(--background-color);
 }
 
@@ -612,7 +583,6 @@ body {
   transform: translateY(-50%);
 }
 
-/* 悬停效果 */
 .faq-item:hover .faq-question h3 {
   color: var(--hover-color);
 }
@@ -622,7 +592,6 @@ body {
   background-color: var(--hover-color);
 }
 
-/* 展开状态 */
 .faq-item.active .faq-toggle {
   transform: rotate(45deg);
 }
@@ -641,7 +610,6 @@ body {
   padding: 1rem;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .navbar-brand {
     width: 100%;
@@ -714,8 +682,8 @@ body {
   }
 
   .slogan-text {
-    font-size: 1.3rem; /* 小屏幕字体大小 */
-    margin: 2rem 0; /* 小屏幕上下边距 */
+    font-size: 1.3rem;
+    margin: 2rem 0;
   }
 
   #app-features {
@@ -762,10 +730,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  #app-features {
-    grid-template-columns: 1fr;
-  }
-
+  #app-features,
   .reviews-container {
     grid-template-columns: 1fr;
   }
@@ -778,7 +743,6 @@ body {
   }
 }
 
-/* NoScript 警告样式 */
 .noscript-warning {
   position: fixed;
   top: 50%;
