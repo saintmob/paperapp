@@ -525,7 +525,7 @@ body {
 }
 
 .faq {
-  padding: 0 0 5rem;
+  /* padding: 0 0 5rem; */
   background-color: var(--background-color);
 }
 

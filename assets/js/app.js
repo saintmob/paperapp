@@ -13,7 +13,8 @@ async function initNavbarToggle() {
         if (isToggle) {
             navbarToggle.classList.toggle('active');
             navbarMenu.classList.toggle('active');
-        } else if (!isMenu) {
+        } else {
+            // 无论是否点击菜单内容，都关闭汉堡菜单
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
         }
