@@ -1,5 +1,6 @@
 import { updateContent, changeLanguage, initLanguageSelector, getDefaultLanguage } from './languageUtils.js';
 import { langData } from './translations.js';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 async function initNavbarToggle() {
     const navbarToggle = document.querySelector('.navbar-toggle');
