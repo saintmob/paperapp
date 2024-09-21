@@ -20,8 +20,10 @@
     <link rel="apple-touch-icon" href="./assets/icon_128x128@2x.png">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     
-    <link rel="stylesheet" href="./assets/css/pap-er.css">
+    <link rel="stylesheet" href="./assets/css/pap-er.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="./assets/css/pap-er.css"></noscript>
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
+    <link rel="preload" href="./assets/font/cg.ttf" as="font" type="font/ttf" crossorigin>
 </head>
 
 <body>
@@ -97,7 +99,7 @@
             </noscript>
             <div class="swiper-wrapper" id="screenshot-wrapper">
                 <div class="swiper-slide">
-                    <img src="./assets/screenshots/720p/s00051.webp" alt="Screenshot 1" loading="lazy" style="background: #f0f0f0;"> <!-- 占位符 -->
+                    <img src="./assets/screenshots/720p/s00051.webp" alt="Screenshot 1" loading="eager" fetchpriority="high" style="background: #f0f0f0;"> <!-- 占位符 -->
                 </div>
                 <div class="swiper-slide">
                     <img src="./assets/screenshots/720p/s00122.webp" alt="Screenshot 2" loading="lazy" style="background: #f0f0f0;"> <!-- 占位符 -->
@@ -283,7 +285,7 @@
                         <span class="faq-toggle"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>您只需将图片直接放入 pap.er 的存储文件夹，并在设置中勾选“导入本地壁纸”即可。</p>
+                        <p>您只需将图片直接放入 pap.er 的存储文件夹，并在设置中勾选"导入本地壁纸"即可。</p>
                     </div>
                 </div>
                 <div class="faq-item">

@@ -101,7 +101,6 @@ function displayReviews(reviews) {
 
 async function initSwiper() {
     try {
-        console.log('开始初始化 Swiper');
         const swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 30,
@@ -128,9 +127,21 @@ async function initSwiper() {
                 1024: {
                     slidesPerView: 4,
                 }
-            }
+            },
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
         });
-        console.log('Swiper 初始化完成');
+        
+        // 加载第一张图片
+        const firstSlide = document.querySelector('.swiper-slide:first-child img');
+        if (firstSlide) {
+            firstSlide.src = firstSlide.dataset.src;
+            firstSlide.onload = () => swiper.update();
+        }
+        
+        console.log('开始初始化 Swiper');
         await loadRandomScreenshots(swiper);
         
         // Update Swiper after loading screenshots

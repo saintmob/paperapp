@@ -10,6 +10,7 @@
   --hover-color: #4a90e2;
   --author-color: #555;
   --spacing-unit: 1rem;
+  --navbar-height: 80px;
 }
 
 @font-face {
@@ -28,7 +29,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: var(--navbar-height);
 }
 
 body {
@@ -36,7 +37,7 @@ body {
   line-height: 1.5;
   color: var(--text-color);
   background-color: var(--background-color);
-  padding-top: 80px;
+  padding-top: var(--navbar-height);
 }
 
 .container {
@@ -54,10 +55,11 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  height: var(--navbar-height);
 }
 
 .navbar-placeholder {
-  height: 80px;
+  height: var(--navbar-height);
 }
 
 .navbar .container {
@@ -76,6 +78,7 @@ body {
 }
 
 .logo {
+  width: 30px;
   height: 30px;
   vertical-align: middle;
 }
@@ -259,6 +262,7 @@ body {
   box-sizing: border-box;
   position: relative;
   margin-top: 20px;
+  min-height: 160px; /* 根据实际内容调整 */
 }
 
 .swiper-slide {
@@ -274,9 +278,11 @@ body {
   width: 100%;
   max-width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
   border-radius: 8px;
   box-shadow: 0 4px 6px var(--shadow-color);
+  content-visibility: auto;
 }
 
 .section-title {
@@ -322,6 +328,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 200px; /* 根据实际内容调整 */
 }
 
 .feature-item:hover {
@@ -377,6 +385,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
+  min-height: 200px; /* 根据实际内容调整 */
 }
 
 .review-item {
@@ -388,6 +397,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 200px; /* 根据实际内容调整 */
 }
 
 .review-item:hover {
